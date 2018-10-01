@@ -1,0 +1,51 @@
+<template format="5"
+        revision="3"
+        name="MVPI Template Fragment"
+        minApi="7"
+        minBuildApi="8"
+        description="Creates a new MVPI classes - Presenter, View, Interactor, Contract and Provider">
+ 
+    <category value="Other"/>
+
+    <dependency name="android-support-v4" revision="8" />
+
+    <parameter id="className"
+        name="Fragment Name"
+        type="string"
+        constraints="class|unique|nonempty"
+        default="Blank"
+        help="The name of the fragment that requires MVPI views"/>
+
+    <parameter
+            id="includeLayout"
+            name="Create layout XML?"
+            type="boolean"
+            default="true"
+            help="Generate a layout XML for the fragment" />
+
+    <parameter
+            id="fragmentName"
+            name="Fragment Layout Name"
+            type="string"
+            constraints="layout|nonempty|unique"
+            default="fragment_blank"
+            visibility="includeLayout"
+            suggest="fragment_${classToResource(className)}"
+            help="The name of the layout to create" />
+
+    <parameter
+        id="applicationpackage"
+        name="Application package name"
+        type="string"
+        constraints="package"
+        default="com.horical.example" /> 
+        
+    <!-- 128x128 thumbnails relative to template.xml -->
+    <thumbs>
+        <thumb>template_blank_fragment.png</thumb>
+    </thumbs>    
+ 
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+ 
+</template>
