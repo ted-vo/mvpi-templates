@@ -8,5 +8,6 @@
 
 
 # USING
-
-- Copy all folder to: ```../Android Studio.app/Contents/plugins/android/lib/templates/other```
+Copy all folder to: 
+- MacOS: ```../Android Studio.app/Contents/plugins/android/lib/templates/other```
+- WindowOS: ```../plugins/android/lib/templates/other```
